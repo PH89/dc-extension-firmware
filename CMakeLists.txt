@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name.
 
-add_executable(jetkvm-dc jetkvm-dc.c driver_ina219.c flash_store.c)
+add_executable(jetkvm-dc jetkvm-dc.c driver_ina219.c flash_store.c fw_update.c)
 
 pico_set_program_name(jetkvm-dc "jetkvm-dc")
 pico_set_program_version(jetkvm-dc "0.2.0")

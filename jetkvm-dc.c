@@ -7,6 +7,7 @@
 #include "hardware/i2c.h"
 #include "driver_ina219.h"
 #include "flash_store.h"
+#include "fw_update.c"
 
 #define UART_ID uart0
 #define BAUD_RATE 115200
@@ -122,6 +123,9 @@ void on_uart_line(const char *line)
     } else if (strcmp(line, "VERSION\n") == 0) {
         uart_send_version();
     }
+    else if (strcmp(line, "FW_UPDATE\n") == 0) {
+       receive_and_flash_firmware();
+   }
 }
 
 void on_uart_rx()

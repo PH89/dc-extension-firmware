@@ -1,0 +1,3 @@
+add_executable(updater main.c)
+target_link_libraries(updater pico_stdlib hardware_flash hardware_sync hardware_uart)
+pico_add_extra_outputs(updater)
